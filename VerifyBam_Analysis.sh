@@ -1,20 +1,18 @@
 #!/bin/bash -l
  
-export PATH=/home/hthiele0/bin:/data/SW/samtools-1.2:/data/SW/bcftools-1.2:$PATH
-
-PROJECTDIR=$1 ###e.g. /data/Varpipe2.0/data/projects/PRID655
+PROJECTDIR=$1 ###e.g. 
 #FileNo=$2
 ENRID=$2 ### only number
-Outdir=$3 ### ResultsDir ## /data/Varpipe2.0/data/VerifyBamIDReopts/PRID655
+Outdir=$3 ### ResultsDir ## 
 mkdir -p $Outdir
 
-BCFTOOL=/data/SW/bcftools-1.2/bcftools
+BCFTOOL=<dir>/bcftools-1.2/bcftools
 ### Need to create first KGVCF file by using following commonds 
 
-#$BCFTOOL view -R /data/Varpipe2.0/data/shared/various/ENRID4.bed ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz | sed 's/;AF=/;AF_ALL=/g' | sed 's/AC=/AC_ALL=/g' | sed 's/;AN=/;AN_ALL=/g' | sed 's/EUR_AF/AF/g' | gzip > ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.Enrid4_target.vcf.gz
+#$BCFTOOL view -R ENRID4.bed ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz | sed 's/;AF=/;AF_ALL=/g' | sed 's/AC=/AC_ALL=/g' | sed 's/;AN=/;AN_ALL=/g' | sed 's/EUR_AF/AF/g' | gzip > ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.Enrid4_target.vcf.gz
 
 ####################
-KGVCF=/data/Varpipe2.0/data/shared/various/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.Enrid${ENRID}_target.vcf.gz
+KGVCF=<dir>/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.Enrid${ENRID}_target.vcf.gz
 #list=`find $PROJECTDIR -name "*.Improved.bam" -type f | sort | head -$FileNo`
 #BEGIN=1;END=50;
 BEGIN=1;
